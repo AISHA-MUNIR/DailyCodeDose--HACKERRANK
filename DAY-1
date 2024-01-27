@@ -1,0 +1,27 @@
+test_cases=int(input())
+list1=[]
+
+for i in range(test_cases):
+
+    b_and_w_values=list(map(int,input().rstrip().split()))
+    bc_wc_z_values=list(map(int,input().rstrip().split()))
+
+    if bc_wc_z_values[0]==bc_wc_z_values[1]:
+        val=(bc_wc_z_values[0]*b_and_w_values[0])+(bc_wc_z_values[1]*b_and_w_values[1])
+
+    elif bc_wc_z_values[0]<bc_wc_z_values[1] and (abs(bc_wc_z_values[0]-bc_wc_z_values[1])>bc_wc_z_values[2]):
+            val=((bc_wc_z_values[0]*b_and_w_values[0]))+((bc_wc_z_values[0]*b_and_w_values[1])+(bc_wc_z_values[2]*b_and_w_values[1]))
+
+    elif bc_wc_z_values[0]<bc_wc_z_values[1] and (abs(bc_wc_z_values[0]-bc_wc_z_values[1])<=bc_wc_z_values[2]):
+            val=((bc_wc_z_values[0]*b_and_w_values[0]))+(bc_wc_z_values[1]*b_and_w_values[1])
+
+    elif bc_wc_z_values[0]>bc_wc_z_values[1] and (abs(bc_wc_z_values[0]-bc_wc_z_values[1])>bc_wc_z_values[2]):
+            val=((bc_wc_z_values[1]*b_and_w_values[1]))+((bc_wc_z_values[1]*b_and_w_values[0])+(bc_wc_z_values[2]*b_and_w_values[0]))
+
+    elif bc_wc_z_values[0]>bc_wc_z_values[1] and (abs(bc_wc_z_values[0]-bc_wc_z_values[1])<bc_wc_z_values[2]):
+            val=((bc_wc_z_values[0]*b_and_w_values[0]))+(bc_wc_z_values[1]*b_and_w_values[1])
+
+    list1.append(val)
+
+for i in range(len(list1)):
+    print(list1[i])
